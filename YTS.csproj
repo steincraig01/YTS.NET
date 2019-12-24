@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>virgincode</Authors>
+    <NeutralLanguage>en</NeutralLanguage>
+    <Copyright>Copyright © 2019</Copyright>
+    <PackageId>YTS.NET</PackageId>
+    <Product>YTS.NET</Product>
+    <Description>A Lightweight .NET Wrapper For YTS API.</Description>
+    <PackageTags />
+    <RepositoryUrl></RepositoryUrl>
+    <PackageProjectUrl></PackageProjectUrl>
+    <PackageIcon>Icon.png</PackageIcon>
+    <PackageIconUrl />
+    <PackageLicenseFile>License.txt</PackageLicenseFile>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
+</Project>
