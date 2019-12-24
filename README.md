@@ -8,7 +8,7 @@ This is my first ever project that is published online, I may make a couple of m
 
 You will need a version that is [compatible with .NET Standard 2.0](https://docs.microsoft.com/en-us/dotnet/standard/net-standard).
 
-Firstly, you will need to install the library from NuGet or just directly from the releases.
+Firstly, you will need to install the library from [NuGet](https://www.nuget.org/packages/YTS.NET) or just directly from the [releases](https://github.com/virgincode/YTS.NET/releases). Those who are downloading directly from releases should mind about the dependencies.
 
 ```
 Install-Package YTS.NET
@@ -17,7 +17,7 @@ Install-Package YTS.NET
 Secondly, create a API Service from the library.
 
 ```
-var Service = new YTS.API();
+var Service = new YTS.API(new Uri("https://yts.lt/api/v2"));
 ```
 
 Finally, you can use all of the power from YTS.
@@ -27,7 +27,7 @@ Finally, you can use all of the power from YTS.
 Right here in this code, I'm searching for a movie with the query "harry potter" and selecting the first movie, and then getting a 720p quality torrent magnet link.
 
 ```
-var Service = new YTS.API(); 
+var Service = new YTS.API(new Uri("https://yts.lt/api/v2")); 
 var Response = Service.GetMovieList("harry potter"); // Search Movies Matching Query
 var Movie = Response.Data.Movies[0]; // Selecting First Movie
 string Magnet = null;

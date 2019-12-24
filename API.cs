@@ -1,6 +1,7 @@
-﻿using System.IO;
+﻿using Newtonsoft.Json;
+using System;
+using System.IO;
 using System.Net;
-using Newtonsoft.Json;
 using YTS.Models;
 
 namespace YTS
@@ -10,12 +11,11 @@ namespace YTS
     {
 
         private string URL;
-
         private WebClient Client = new WebClient();
 
-        public API(string URL)
+        public API(Uri URL)
         {
-            this.URL = URL;
+            this.URL = URL.AbsoluteUri;
         }
 
         public Response<MovieList> GetMovieList(string Query)
