@@ -13,6 +13,11 @@ namespace YTS
         private string URL;
         private WebClient Client = new WebClient();
 
+        public API(string URL)
+        {
+            this.URL = new Uri(URL).AbsoluteUri;
+        }
+
         public API(Uri URL)
         {
             this.URL = URL.AbsoluteUri;
