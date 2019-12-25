@@ -33,7 +33,7 @@ And then let's get the movie's cast and then get other movie suggestions for the
 
 ```
 var Details = Service.GetMovieDetails(Movie.ID); // Gets Movie Details
-var Cast = Details.Data.Movie.Cast; // Array Containing 4 Actors Only
+var Cast = Details.Data.Movie.Cast; // Array Containing 4 Actors
 var Suggestions = Service.GetMovieSuggestions(Movie.ID).Data.Suggestions; // Array Containing 4 Movie Suggestions
 ```
 
@@ -58,4 +58,4 @@ foreach (var Torrent in Movie.Torrents)
 System.Diagnostics.Process.Start(Magnet); // Calls Another Program To Download The Movie
 ```
 
-And that's all I can explain for now. If you can make a better documentary about YTS.NET, then please contact me through [NuGet](https://www.nuget.org/packages/YTS.NET).
+And that's all I can explain for now. Anything wrong with the documentary or the project, please add an issue.
