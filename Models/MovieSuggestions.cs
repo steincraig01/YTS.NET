@@ -10,7 +10,7 @@ namespace YTS.Models
         public int Count;
 
         [JsonProperty("movies")]
-        public MovieInfo[] Suggestions;
+        public MovieInfo[] Movies;
 
     }
 

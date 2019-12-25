@@ -25,8 +25,8 @@ First of all you must have a targetting version that is compatible with .NET Sta
 Let's say we are searching for a movie, let's say "harry potter" and so I put it in the method and get the response, and then select the movie that comes first in the results
 
 ```
-var Service = new YTS.API(new Uri("https://yts.lt/api/v2"));
-var Response = Service.GetMovieList("harry potter"); // Searches For Movies With The Query
+var API = new YTS.Services(new Uri("https://yts.lt/api/v2"));
+var Response = API.GetMovieList("harry potter"); // Searches For Movies With The Query
 var Movies = Response.Data.Movies; // Results Matching The Query
 var Movie = Movies[0]; // Selecting The First Movie
 ```
@@ -34,9 +34,9 @@ var Movie = Movies[0]; // Selecting The First Movie
 And then let's get the movie's cast and then get other movie suggestions for the user.
 
 ```
-var Details = Service.GetMovieDetails(Movie.ID); // Gets Movie Details
-var Cast = Details.Data.Movie.Cast; // Array Containing 4 Actors
-var Suggestions = Service.GetMovieSuggestions(Movie.ID).Data.Suggestions; // Array Containing 4 Movie Suggestions
+var Details = API.GetMovieDetails(Movie.ID); // Gets Movie Details
+var Cast = Details.Data.Movie.Cast; // Array Containing Actors
+var Suggestions = API.GetMovieSuggestions(Movie.ID).Data.Movies; // Array Containing Movie Suggestions
 ```
 
 And so, we'll get a 1080p torrent magnet link for that movie, and trackers for the torrent.
