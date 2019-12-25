@@ -14,8 +14,8 @@
     <PackageIconUrl />
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
-    <Version>1.1.0</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.2.0</Version>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
