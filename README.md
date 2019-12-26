@@ -2,7 +2,7 @@
 
 ![nuget](https://img.shields.io/nuget/v/YTS.NET)
 
-YTS.NET is a .NET Wrapper for YTS API. It provides access to __working functionalities__ of the API like listing movies and so on. As of  right now writing this document, there is only three working functions in the API, not the library, the [API documentary of YTS](https://yts.lt/api/v2) might be outdated. And fun fact, this is my first ever project that is published online!
+YTS.NET is a .NET Wrapper for YTS API. It provides access to __working functionalities__ of the API like listing movies and so on. As of right now writing this document, there is only three working functions in the API, not the library, the [API documentary](https://yts.lt/api/v2) of YTS might be outdated or incomplete. And fun fact, this is my first ever project that is published online!
 
 ## Getting Started
 
