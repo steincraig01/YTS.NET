@@ -26,7 +26,7 @@ Let's say we are searching for a movie, let's say "harry potter" and so I put it
 
 ```
 var API = new YTS.Services(new Uri("https://yts.mx/api/v2"));
-var Response = API.GetMovieList("harry potter"); // Searches For Movies With The Query
+var Response = API.GetMovieList(Query: "Harry Potter"); // Searches For Movies With The Query
 var Movies = Response.Data.Movies; // Results Matching The Query
 var Movie = Movies[0]; // Selecting The First Movie
 ```
