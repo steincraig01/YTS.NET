@@ -2,7 +2,7 @@
 
 [![nuget](https://img.shields.io/nuget/v/YTS.NET)](https://nuget.org/packages/YTS.NET)
 
-YTS.NET is a .NET Wrapper for YTS API. It provides access to __working functionalities__ of the API like listing movies and so on. As of right now writing this document, there is only three working functions in the API, not the library, the [API documentary](https://yts.lt/api/v2) of YTS might be outdated or incomplete. And fun fact, this is my first ever project that is published online!
+YTS.NET is a .NET Wrapper for YTS API. It provides access to __working functionalities__ of the API like listing movies and so on. As of right now writing this document, there is only three working functions in the API, not the library, the [API documentary](https://yts.mx/api) of YTS might be outdated or incomplete. And fun fact, this is my first ever project that is published online!
 
 ## Getting Started
 
@@ -25,7 +25,7 @@ First of all you must have a targetting version that is compatible with .NET Sta
 Let's say we are searching for a movie, let's say "harry potter" and so I put it in the method and get the response, and then select the movie that comes first in the results
 
 ```
-var API = new YTS.Services(new Uri("https://yts.lt/api/v2"));
+var API = new YTS.Services(new Uri("https://yts.mx/api/v2"));
 var Response = API.GetMovieList("harry potter"); // Searches For Movies With The Query
 var Movies = Response.Data.Movies; // Results Matching The Query
 var Movie = Movies[0]; // Selecting The First Movie
@@ -44,14 +44,15 @@ And so, we'll get a 1080p torrent magnet link for that movie, and trackers for t
 ```
 var Trackers = new string[] // Creating Trackers For Torrent
 {
-	"udp://open.demonii.com:1337/announce",
-	"udp://tracker.openbittorrent.com:80",
-	"udp://tracker.coppersurfer.tk:6969",
-	"udp://glotorrents.pw:6969/announce",
-	"udp://tracker.opentrackr.org:1337/announce",
-	"udp://torrent.gresille.org:80/announce",
-	"udp://p4p.arenabg.com:1337",
-	"udp://tracker.leechers-paradise.org:6969"
+
+	 "udp://glotorrents.pw:6969/announce",
+	 "udp://tracker.opentrackr.org:1337/announce",
+	 "udp://torrent.gresille.org:80/announce",
+	 "udp://tracker.openbittorrent.com:80",
+	 "udp://tracker.coppersurfer.tk:6969",
+	 "udp://tracker.leechers-paradise.org:6969",
+	 "udp://p4p.arenabg.ch:1337",
+	 "udp://tracker.internetwarriors.net:1337"
 };
 string Magnet = null;
 foreach (var Torrent in Movie.Torrents)
