@@ -8,23 +8,15 @@ using YTS.Models;
 
 namespace YTS
 {
-    
     [Obsolete("This Class Is Replaced By Another Class, Please Use YTS.Services!")]
     public class API
     {
+        private readonly string URL;
+        private readonly WebClient Client = new WebClient();
 
-        private string URL;
-        private WebClient Client = new WebClient();
+        public API(string URL) => this.URL = new Uri(URL).AbsoluteUri;
 
-        public API(string URL)
-        {
-            this.URL = new Uri(URL).AbsoluteUri;
-        }
-
-        public API(Uri URL)
-        {
-            this.URL = URL.AbsoluteUri;
-        }
+        public API(Uri URL) => this.URL = URL.AbsoluteUri;
 
         public Response<MovieList> GetMovieList(string Query)
         {
@@ -49,7 +41,5 @@ namespace YTS
             var Data = Client.DownloadString(Request);
             return JsonConvert.DeserializeObject<Response<MovieSuggestions>>(Data);
         }
-
     }
-
 }

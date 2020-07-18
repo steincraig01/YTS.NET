@@ -3,10 +3,8 @@ using System;
 
 namespace YTS.Models
 {
-
     public class MovieInfo
     {
-
         private string pURL;
         private string pIMDB;
         private string pTrailer;
@@ -22,15 +20,15 @@ namespace YTS.Models
         [JsonProperty("url")]
         public string URL
         {
-            get { return pURL; }
-            set { pURL = value.Replace("\\", string.Empty); }
+            get => pURL;
+            set => pURL = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("imdb_code")]
         public string IMDB
         {
-            get { return pIMDB; }
-            set { pIMDB = "https://www.imdb.com/title/" + value; }
+            get => pIMDB;
+            set => pIMDB = "https://www.imdb.com/title/" + value;
         }
 
         [JsonProperty("title")]
@@ -69,8 +67,8 @@ namespace YTS.Models
         [JsonProperty("yt_trailer_code")]
         public string Trailer
         {
-            get { return pTrailer; }
-            set { pTrailer = "https://www.youtube.com/watch?v=" + value; }
+            get => pTrailer;
+            set => pTrailer = "https://www.youtube.com/watch?v=" + value;
         }
 
         [JsonProperty("language")]
@@ -82,36 +80,36 @@ namespace YTS.Models
         [JsonProperty("background_image")]
         public string Background
         {
-            get { return pBackground; }
-            set { pBackground = value.Replace("\\", string.Empty); }
+            get => pBackground;
+            set => pBackground = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("background_image_original")]
         public string BackgroundOriginal
         {
-            get { return pBackgroundOriginal; }
-            set { pBackgroundOriginal = value.Replace("\\", string.Empty); }
+            get => pBackgroundOriginal;
+            set => pBackgroundOriginal = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("small_cover_image")]
         public string SmallCover
         {
-            get { return pSmallCover; }
-            set { pSmallCover = value.Replace("\\", string.Empty); }
+            get => pSmallCover;
+            set => pSmallCover = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("medium_cover_image")]
         public string MediumCover
         {
-            get { return pMediumCover; }
-            set { pMediumCover = value.Replace("\\", string.Empty); }
+            get => pMediumCover;
+            set => pMediumCover = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("large_cover_image")]
         public string LargeCover
         {
-            get { return pLargeCover; }
-            set { pLargeCover = value.Replace("\\", string.Empty); }
+            get => pLargeCover;
+            set => pLargeCover = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("state")]
@@ -125,7 +123,5 @@ namespace YTS.Models
 
         [JsonProperty("date_uploaded_unix")]
         public uint DateUploadedUnix;
-
     }
-
 }

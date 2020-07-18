@@ -3,17 +3,15 @@ using System;
 
 namespace YTS.Models
 {
-
     public class MovieTorrent
     {
-
         private string pURL;
 
         [JsonProperty("url")]
         public string URL
         {
-            get { return pURL; }
-            set { pURL = value.Replace("\\", string.Empty); }
+            get => pURL;
+            set => pURL = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("hash")]
@@ -52,7 +50,5 @@ namespace YTS.Models
                 TR += "&tr=" + Tracker;
             return string.Format("magnet:?xt=urn:btih:{0}&dn={1}{2}", BTIH, DN, TR);
         }
-
     }
-
 }

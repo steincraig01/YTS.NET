@@ -2,10 +2,8 @@
 
 namespace YTS.Models
 {
-
     public class MovieActor
     {
-
         private string pImage;
         private string pIMDB;
 
@@ -18,17 +16,15 @@ namespace YTS.Models
         [JsonProperty("url_small_image")]
         public string Image
         {
-            get { return pImage; }
-            set { pImage = value.Replace("\\", string.Empty); }
+            get => pImage;
+            set => pImage = value.Replace("\\", string.Empty);
         }
 
         [JsonProperty("imdb_code")]
         public string IMDB
         {
-            get { return pIMDB; }
-            set { pIMDB = "https://www.imdb.com/name/" + value; }
+            get => pIMDB;
+            set => pIMDB = "https://www.imdb.com/name/" + value;
         }
-
     }
-
 }
