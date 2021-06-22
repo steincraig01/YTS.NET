@@ -28,19 +28,28 @@ namespace YTS
             this.Key = Key;
         }
 
-        public Response<MovieList> GetMovieList(int Limit = 20, int Page = 1, string MovieQuality = MovieQuality.All, int MinimumRating = 0, string Query = "", string Genre = "All", string SortBy = SortBy.DateAdded, string OrderBy = OrderBy.Decending)
+        //public Response<MovieList> GetMovieList(int Limit = 20, int Page = 1, string MovieQuality = MovieQuality.All, int MinimumRating = 0, string Query = "", string Genre = "All", string SortBy = SortBy.DateAdded, string OrderBy = OrderBy.Decending)
+        //{
+        //    var Endpoint = string.Format("list_movies.json?limit={0}&page={1}&quality={2}&minimum_rating={3}&query_term={4}&genre={5}&sort_by={6}&order_by={7}"
+        //        , Limit, Page, MovieQuality, MinimumRating, Query.Replace(" ", "+"), Genre, SortBy, OrderBy);
+        //    var Request = Path.Combine(API, Endpoint);
+        //    var Data = Client.DownloadString(Request);
+        //    return JsonConvert.DeserializeObject<Response<MovieList>>(Data);
+        //}
+
+        public Response<MovieList> GetMovieList(int Limit = 20, int Page = 1, string MovieQuality = MovieQuality.All, string Query = "", string SortBy = SortBy.DateAdded, string OrderBy = OrderBy.Decending)
         {
-            var Endpoint = string.Format("list_movies.json?limit={0}&page={1}&quality={2}&minimum_rating={3}&query_term={4}&genre={5}&sorty_by={6}&order_by={7}"
-                , Limit, Page, MovieQuality, MinimumRating, Query.Replace(" ", "+"), Genre, SortBy, OrderBy);
+            var Endpoint = string.Format("list_movies.json?limit={0}&page={1}&quality={2}&query_term={3}&sort_by={4}&order_by={5}"
+                , Limit, Page, MovieQuality, Query.Replace(" ", "+"), SortBy, OrderBy);
             var Request = Path.Combine(API, Endpoint);
             var Data = Client.DownloadString(Request);
             return JsonConvert.DeserializeObject<Response<MovieList>>(Data);
         }
 
-        public async Task<Response<MovieList>> GetMovieListAsync(int Limit = 20, int Page = 1, string MovieQuality = MovieQuality.All, int MinimumRating = 0, string Query = "", string Genre = "All", string SortBy = SortBy.DateAdded, string OrderBy = OrderBy.Decending)
+        public async Task<Response<MovieList>> GetMovieListAsync(int Limit = 20, int Page = 1, string MovieQuality = MovieQuality.All, string Query = "", string SortBy = SortBy.DateAdded, string OrderBy = OrderBy.Decending)
         {
-            var Endpoint = string.Format("list_movies.json?limit={0}&page={1}&quality={2}&minimum_rating={3}&query_term={4}&genre={5}&sorty_by={6}&order_by={7}"
-                , Limit, Page, MovieQuality, MinimumRating, Query.Replace(" ", "+"), Genre, SortBy, OrderBy);
+            var Endpoint = string.Format("list_movies.json?limit={0}&page={1}&quality={2}&query_term={3}&sort_by={4}&order_by={5}"
+                , Limit, Page, MovieQuality, Query.Replace(" ", "+"), SortBy, OrderBy);
             var Request = Path.Combine(API, Endpoint);
             var Data = await ClientAsync.GetStringAsync(Request);
             return JsonConvert.DeserializeObject<Response<MovieList>>(Data);

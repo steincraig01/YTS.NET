@@ -32,14 +32,14 @@ namespace YTS.Models
         [JsonProperty("size")]
         public string Size;
 
-        [JsonProperty("size_bytes")]
-        public uint SizeBytes;
+        //[JsonProperty("size_bytes")]
+        //public int SizeBytes;
 
         [JsonProperty("date_uploaded")]
         public DateTime DateUploaded;
 
-        [JsonProperty("date_uploaded_unix")]
-        public uint DateUploadedUnix;
+        //[JsonProperty("date_uploaded_unix")]
+        //public int DateUploadedUnix;
 
         public string CreateMagnet(string Name, string[] Trackers)
         {
